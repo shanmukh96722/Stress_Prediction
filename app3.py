@@ -20,12 +20,12 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     
-    skin_resistance = st.text_input("Skin Resistance", "Range: 0-25")
+    skin_resistance = st.text_input("Skin Resistance", "")
     respiratory_rate = st.text_input("Respiratory Rate", "")
     temp = st.text_input("Temperature", "")
     blood_oxygen = st.text_input("Blood Oxygen", "")
     heart_rate = st.text_input("Heart Rate", "")
-    
+    Sleep_Activity=st.text_input("Sleep Activity","")
     result = ""
     if st.button("Predict"):
         result = predict_stress(float(skin_resistance), float(respiratory_rate), float(temp), float(blood_oxygen), float(heart_rate))
@@ -33,12 +33,12 @@ def main():
         if result==0 or result==1:
             st.success("Low Stress")
         elif result==2:
-            st.success("Med Stress")
+            st.success("Medium Stress")
         elif result ==3 or result ==4:
             st.success("High Stress")        
 
     if st.button("About"):
-        st.text("Built with Streamlit")
+        st.text("Stress Prediction")
 
 if __name__ == '__main__':
     main()
