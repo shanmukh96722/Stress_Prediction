@@ -83,8 +83,7 @@ def main():
         if submitted:
             result = predict_stress(skin_resistance, respiratory_rate, temp, blood_oxygen, heart_rate)
             if result == 0 or result == 1:
-                st.markdown('<div class="result-container low-stress"><p>Low Stress</p>
-                <p>Practice daily relaxation techniques like deep breathing or mindfulness for a few minutes each day.</p> </div>', unsafe_allow_html=True)
+                st.markdown('<div class="result-container low-stress"><h5>Low Stress </h5> <p>Practice daily relaxation techniques like deep breathing or mindfulness for a few minutes each day.</p> </div>', unsafe_allow_html=True)
             elif result == 2:
                 st.markdown('<div class="result-container medium-stress"><p>Medium Stress</p></div>', unsafe_allow_html=True)
             elif result == 3 or result == 4:
