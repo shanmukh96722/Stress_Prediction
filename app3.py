@@ -76,19 +76,21 @@ def main():
         temp = st.number_input("Temperature")
         blood_oxygen = st.number_input("Blood Oxygen")
         heart_rate = st.number_input("Heart Rate")
+        sleep_pattern=st.number_input("Sleep Activity")
         
         submitted = st.form_submit_button("Predict")
         
         if submitted:
             result = predict_stress(skin_resistance, respiratory_rate, temp, blood_oxygen, heart_rate)
             if result == 0 or result == 1:
-                st.markdown('<div class="result-container low-stress"><p>Low Stress</p></div>', unsafe_allow_html=True)
+                st.markdown('<div class="result-container low-stress"><p>Low Stress</p>
+                <p>Practice daily relaxation techniques like deep breathing or mindfulness for a few minutes each day.</p> </div>', unsafe_allow_html=True)
             elif result == 2:
                 st.markdown('<div class="result-container medium-stress"><p>Medium Stress</p></div>', unsafe_allow_html=True)
             elif result == 3 or result == 4:
                 st.markdown('<div class="result-container high-stress"><p>High Stress</p></div>', unsafe_allow_html=True)
     
-    st.markdown('<p style="text-align:center;">Made with ❤️ by Your Name</p>', unsafe_allow_html=True)
+    st.markdown('<p style="text-align:center;">Made with ❤️ by CSD </p>', unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
